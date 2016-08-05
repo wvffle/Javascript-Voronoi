@@ -6,6 +6,8 @@ to solely compute a Voronoi diagram, it is completely standalone, with
 no dependency on external code: it contains no rendering code: that is
 left to the user of the library.
 
+This is a fork by Lauri Tervonen, released under the original MIT license.
+
 ## Core files
 
 * rhill-voronoi-core.js
