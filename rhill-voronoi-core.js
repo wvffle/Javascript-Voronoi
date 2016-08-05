@@ -489,6 +489,15 @@ Voronoi.prototype.Cell.prototype.getNeighborIds = function() {
     return neighbors;
     };
 
+//Return whether cell is touching the edge of the map
+Voronoi.prototype.Cell.prototype.isBorderCell = function() {
+    for (var i in this.halfedges) {
+        if (this.halfedges[i].edge.rSite === null)
+            return true;
+        }
+    return false;
+    };
+
 // Compute bounding box
 //
 Voronoi.prototype.Cell.prototype.getBbox = function() {
