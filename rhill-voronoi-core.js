@@ -526,6 +526,18 @@ Voronoi.prototype.Cell.prototype.getBbox = function() {
         height: ymax-ymin
         };
     };
+//Compute cell area
+Voronoi.prototype.Cell.prototype.getArea = function() {
+        //http://mathworld.wolfram.com/PolygonArea.html
+        var determinantSum = 0;
+        for (var i in this.halfedges) {
+            var p1 = this.halfedges[i].getStartpoint();
+            var p2 = this.halfedges[i].getEndpoint();
+
+            determinantSum += p1.x*p2.y - p2.x*p1.y;
+        }
+        return -determinantSum/2;
+    };
 
 // Return whether a point is inside, on, or outside the cell:
 //   -1: point is outside the perimeter of the cell
